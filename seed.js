@@ -3,24 +3,24 @@ const {db, Gardener, Plot, Vegetable}= require('./model.js');
 
 db.sync({force: false})
   .then( () => {
-    console.log('*****database synced');
-
-    // seed data
-    const carrots = Vegetable.create({name: 'carrots', color: 'orange'});
-    const onions = Vegetable.create({name: 'onions', color: 'white'});
-
-
-    return Promise.all([carrots, onions, joe])
-    .then( values => {
-      console.log(values);
-    });
-
-  }).
+    // create vegetables
+  })
   .then( () => {
-    db.close();
+    // use vegetables-promise returned in previous then to make gardeners
+  })
+  .then( () => {
+    // use gardeners to create plots
+  })
+  .then( () => {
+    // use evertying to connect ids
+  })
+  .then( () => {
+    console.log('** database synced! **');
   })
   .catch( error => {
-    console.log('*****', error);
+    console.log('Uh oh!', error);
+  })
+  .finally( () => {
     db.close();
   });
 
